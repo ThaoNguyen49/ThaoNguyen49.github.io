@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="description" content="Beste Bellydance Course"/>
+	<meta name="teacher" content="Thao"/>
+	<meta name="country" content="germany"/>
+	<title>Thao Dance/Book Courses</title>
+	<link rel="stylesheet" href="style.css"></link>
+	<script src="contactform.js"></script>
+	<meta name="viewport" content="width=devide-width, initial-scale=1">
+</head>
+<body>
+	<h1 id="thaodance" id="menu_text">Thao Dance</h1>
+	<p id="slogan" id="menu_text"><em>"Dance <strong>With</strong> Your Body, Not <strong>Against</strong> Your Body.<em>"</p>
+	<nav>
+		<a href="index.html" class="menu_left">Back To Homepage</a>
+	</nav>
+	<div id="flex_container">
+		<div id="left_side">
+			<h2>Amazing!</h2>
+			<p>It is wonderful, that you have decided to invest in yourself and to take care of yourself at the first place.</p>
+		</div>
+		<div id="right_side">
+			<div id="error"></div>
+			<form id="contactform" name='submit-to-google-sheet' novalidate>
+				<fieldset id="form">
+					<legend><strong>Book Your Favorite Courses</strong></legend>
+					<p><label for="name">Your Name:</label>
+					<input type="text" name="name" id="name" placeholder="Your Name" pattern="^[A-Z a-z]{1,20}$" requied></p>
+					<p><label for="email">Your Email:</label>
+					<input type="email" name="email" id="email" placeholder="Your Email" pattern="^[A-Z.a-z](\d{0,10})*@[A-Z.a-z]*$" requied></p>
+					<p><label for="phone">Your Phone Number:</label>
+					<input type="text" name="phone" id="phone" placeholder="Your Phone Number" pattern="^((\+49)|0)\d{9,11}$" requied></p>
+					<p><label for="function">Which Course:</label>
+					<select name="course" id="function" placeholder="Which Course" requied>
+						<option value="none">Please select</option>
+						<option>Offline Course</option>
+						<option>Online Course</option>
+						<option>Private Course</option>
+						<option>Trial (15 Euro)</option>
+
+					</select></p>
+					<p><label for="age">Your age: </label><input type="text" id="age" name="age" placeholder="Your Age" pattern="^(\d\d)$" required/></p>
+					<p><label for="other">Notice:</label>
+					<textarea name="coursenotice" id="other" rowa="4" placeholder="Notice" pattern="^.{1,100}$"></textarea></p> 
+					<p>By clicking button "send" you are allowed me to receive your informations and reach out to you.</p>
+				</fieldset>
+				<br><button id="send" type="submit">Book</button>
+				<br/><br/>
+				<span id="spanform"></span>
+			</form>
+		</div>
+
+	</div>
+
+<script>
+	  const scriptURL = 'https://script.google.com/macros/s/AKfycbz_4Vb1SS9tG0K4pVexZWk-WbpJc-peqC76KMB9Jj1zlOad9ake5UfuE0X7jwx_5Ntf/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById('spanform')
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response =>{
+      	msg.innerHTML = "Message sent successfully. Thank you!"
+      	setTimeout(function(){
+      		msg.innerHTML = ""
+      	},7000)
+      	form.reset()
+
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>

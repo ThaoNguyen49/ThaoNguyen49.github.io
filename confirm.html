@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="description" content="Beste Bellydance Course"/>
+	<meta name="teacher" content="Thao"/>
+	<meta name="country" content="germany"/>
+	<title>Thao Dance/Confirm</title>
+	<link rel="stylesheet" href="style.css"></link>
+	<meta name="viewport" content="width=devide-width, initial-scale=1">
+	<script src="confirm.js"></script>
+</head>
+<body>
+	<h1>Thao Dance</h1>
+	<h2>Confirmation Form</h2>
+	<form name='submit-to-google-sheet'>
+		<fieldset><legend>Please confirm your details</legend>
+			
+			<p>Your name: <span name="name" id="confirm_name"></span></p>
+
+		</fieldset>
+
+		<input type="submit" value="Send" id="send"/>
+		<input id="cancel_button" type="button" value="Cancel"/>
+
+	</form>
+
+<script>
+	 const scriptURL = 'https://script.google.com/macros/s/AKfycbz_4Vb1SS9tG0K4pVexZWk-WbpJc-peqC76KMB9Jj1zlOad9ake5UfuE0X7jwx_5Ntf/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById('spanform')
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response =>{
+      	msg.innerHTML = "Message sent successfully. Thank you!"
+      	setTimeout(function(){
+      		msg.innerHTML = ""
+      	},7000)
+      	form.reset()
+
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+	
+</body>
+</html>

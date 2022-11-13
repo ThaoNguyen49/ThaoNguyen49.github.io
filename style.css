@@ -1,0 +1,219 @@
+* {
+	/*margin: 0;*/
+}
+#menu_text{
+	margin: 0;
+	background-color: #0cada8;
+	text-align: center;
+	padding: 80px; 
+}
+
+#thaodance {
+	margin: 0;
+	background-color: #0cada8;
+	text-align: center;
+	padding: 40px 80px 20px 80px;
+}
+#slogan {
+	margin: 0;
+	text-align: center;
+	text-decoration-color: white;
+	background-color: #0cada8;
+	padding: 5px 80px 10px 80px;
+}
+
+h2 {
+	color: #0cada8;
+}
+
+nav {
+	background-color: #333;
+	overflow: hidden;
+}
+
+nav a {
+	color: white;
+	padding: 14px 20px;
+	display: block;
+/*	float: left;*/
+	text-decoration: none;
+}
+
+nav a.menu_left{
+	float: left;
+}
+
+nav a.menu_right{
+	float: right;
+}
+
+.footer_right{
+	float: right;
+	display: table-cell;
+}
+
+nav a:hover {
+	background-color: #f6f7fb;
+	color: #0cada8;
+}
+
+footer a{
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: #0cada8;
+}
+
+#left_side {
+	flex: 30%;
+	padding: 10px 20px;
+	background-color: #f6f7fb;
+}
+
+#right_side {
+	flex: 70%;
+	padding: 10px 20px;
+	/*background-color: #f6f7fb;*/
+}
+
+#flex_container {
+	display: flex;
+	flex-wrap: nowrap;
+	/*background-color: #f6f7fb;*/
+}
+
+footer {
+	background-color: #333;
+	color: white;
+	padding: 10px 20px;
+}
+
+footer a {
+	color: white;
+}
+
+.course_item {
+	text-align: center;
+	flex: 33%;
+}
+
+.course_item img{
+	width: 70%;
+}
+#course_container{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.course_title {
+	font-size: 120%;
+	font-weight: bold;
+	padding: 10px 10px 5px 10px;
+}
+
+.course_desc{
+	margin: 0px 10px 20px 10px;
+}
+
+a, .buttonbookcourses{
+	text-decoration: none;
+	color: black;
+
+}
+
+a, .buttonbookcourses: hover{
+	background-color: #0cada8;
+}
+
+
+.hireme_form1{
+	flex: 50%;
+	align-items: center;
+	justify-content: center;
+}
+
+.hireme_form2{
+	flex: 50%;
+	align-items: center;
+	justify-content: center;
+}
+
+#hireme_container{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+#send:hover {
+	background-color: #0cada8;
+}
+
+#form {
+	border-radius: 20px;
+	background-color: #f6f7fb;
+}
+
+#spanform{
+	color: #0cada8;
+}
+
+/*bookcourse*/
+#error{
+	color: red;
+}
+/*/*/
+
+/*blog*/
+
+
+
+/*BMI-Caculator*/
+
+.bmicontainer {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+}
+
+/*/*Blog*/
+
+ul a:hover{
+	color: #0cada8;
+}
+
+
+
+@media(max-width: 800px) {
+	#left_side {
+		flex: 100%;
+	}
+
+	#right_side {
+		flex: 100%;
+	}
+	#flex_container{
+		flex-wrap: wrap;
+	}
+	.course_item{
+		flex: 50%;
+	}
+
+}
+
+
+@media(max-width: 400px) {
+	#left_side {
+		flex: 100%;
+	}
+
+	#right_side {
+		flex: 100%;
+	}
+	#flex_container{
+		flex-wrap: wrap;
+	}
+	.course_item{
+		flex: 50%;
+	}
+}
